@@ -1,0 +1,37 @@
+[package]
+name = "fastly"
+description = "Fastly Compute@Edge API"
+version.workspace = true
+authors = ["Fastly <oss@fastly.com>"]
+license = "Apache-2.0 WITH LLVM-exception"
+edition = "2021"
+categories = ["wasm", "web-programming"]
+keywords = ["fastly"]
+
+[dependencies]
+# `fastly` contains items from the following packages in its public interface. If the major versions
+# of any of these dependencies are bumped, the major version of `fastly` must be bumped as well.
+anyhow = "1.0.28"
+http = "0.2.3"
+mime = "^0.3.16"
+serde = { version = "1.0.51", features = ["derive"] }
+time = { version = "0.3.0", default-features = false, features = ["std", "serde"] }
+url = "^2.2.2"
+
+# `fastly` does not contain items from the following packages in its public interface, so upgrading
+# these dependencies' major version requires only a minor version bump to `fastly`.
+bytes = { workspace = true }
+cfg-if = "^1.0.0"
+lazy_static = "1.4.0"
+serde_json = "1.0.51"
+serde_urlencoded = "0.7.0"
+sha2 = "^0.9.3"
+thiserror = { workspace = true }
+
+# These are always kept in lock step with the `fastly` version.
+# These crates are in the public interface and any semver changes will require a major version bump
+fastly-macros = { workspace = true }
+fastly-shared = { workspace = true }
+
+# These crates are not in the public interface and only need to be at the same version as `fastly`
+fastly-sys = { workspace = true }

@@ -1,0 +1,14 @@
+[package]
+name = "fastly-shared"
+description = "Shared definitions for Fastly Compute@Edge"
+version.workspace = true
+authors = ["Fastly <oss@fastly.com>"]
+license = "Apache-2.0 WITH LLVM-exception"
+edition = "2021"
+categories = ["development-tools::ffi", "wasm"]
+keywords = ["fastly"]
+
+[dependencies]
+bitflags = { workspace = true }
+http = "0.2.1"
+thiserror = { workspace = true }

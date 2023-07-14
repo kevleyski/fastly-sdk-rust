@@ -1,0 +1,13 @@
+[package]
+name = "fastly-sys"
+description = "Fastly Compute@Edge ABI Bindings"
+version.workspace = true
+authors = ["Fastly <oss@fastly.com>"]
+license = "Apache-2.0 WITH LLVM-exception"
+edition = "2021"
+categories = ["external-ffi-bindings", "wasm"]
+keywords = ["fastly"]
+
+[dependencies]
+bitflags = { workspace = true }
+fastly-shared = { workspace = true }
